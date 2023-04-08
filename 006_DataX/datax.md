@@ -25,3 +25,8 @@
 读写失败总数                    :                   0
 ```
 
+4）DataX 配置文件格式
+
+可以使用 `python bin/datax.py -r mysqlreader -w hdfswriter`命令查看 DataX 配置文件模板。
+
+配置文件模板如下，json 最外层是一个 job，job 包含 setting 和 content 两部分，其中 setting 用于对整个 job 进行配置，content 用户配置数据源和目的地。
