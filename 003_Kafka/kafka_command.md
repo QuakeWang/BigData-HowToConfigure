@@ -12,7 +12,7 @@
 
 `[quakewang@hadoop102 kafka]$ bin/kafka-topics.sh --bootstrap-server hadoop102:9092 --create --replication-factor 2 --partitions 3 --topic topic_log`
 
-### （3）阐述 Kafka Topic
+### （3）删除 Kafka Topic
 
 `[quakewang@hadoop102 kafka]$ bin/kafka-topics.sh --delete --bootstrap-server hadoop102:9092 --topic topic_log`
 
