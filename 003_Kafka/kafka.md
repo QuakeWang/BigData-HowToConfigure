@@ -50,7 +50,7 @@ zookeeper.connect=hadoop102:2181,hadoop103:2181,hadoop104:2181/kafka
 ```bash
 [quakewang@hadoop102 module]$ sudo vi /etc/profile.d/my_env.sh
 
-#KAFKA_HOME
+# KAFKA_HOME
 export KAFKA_HOME=/opt/module/kafka
 export PATH=$PATH:$KAFKA_HOME/bin
 

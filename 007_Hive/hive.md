@@ -2,7 +2,7 @@
 
 ## 一、Hive 安装部署
 
-1）**把 apache-hive-3.1.2-bin.tar.gz上传到服务器的 /opt/software 目录下**
+1）**把 apache-hive-3.1.2-bin.tar.gz 上传到服务器的 /opt/software 目录下**
 
 2）**解压 apache-hive-3.1.2-bin.tar.gz 到 /opt/module/ 目录下面**
 
@@ -80,8 +80,8 @@ export PATH=$PATH:$HIVE_HOME/bin
     </property>
 
     <property>
-    <name>hive.server2.thrift.port</name>
-    <value>10000</value>
+        <name>hive.server2.thrift.port</name>
+        <value>10000</value>
     </property>
 
     <property>

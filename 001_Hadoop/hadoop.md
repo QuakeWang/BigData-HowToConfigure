@@ -58,7 +58,7 @@ export PATH=$PATH:$HADOOP_HOME/sbin
         <name>fs.defaultFS</name>
         <value>hdfs://hadoop102:8020</value>
 	</property>
-	<!-- 指定 hadoop 数据的存储目录 -->
+	<!-- 指定 Hadoop 数据的存储目录 -->
     <property>
         <name>hadoop.tmp.dir</name>
         <value>/opt/module/hadoop-3.1.3/data</value>
@@ -95,19 +95,19 @@ export PATH=$PATH:$HADOOP_HOME/sbin
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
 
 <configuration>
-	<!-- nn web端访问地址-->
+	<!-- nn web 端访问地址-->
 	<property>
         <name>dfs.namenode.http-address</name>
         <value>hadoop102:9870</value>
     </property>
     
-	<!-- 2nn web端访问地址-->
+	<!-- 2nn web 端访问地址-->
     <property>
         <name>dfs.namenode.secondary.http-address</name>
         <value>hadoop104:9868</value>
     </property>
     
-    <!-- 测试环境指定HDFS副本的数量1 -->
+    <!-- 测试环境指定 HDFS 副本的数量 1 -->
     <property>
         <name>dfs.replication</name>
         <value>3</value>
@@ -122,13 +122,13 @@ export PATH=$PATH:$HADOOP_HOME/sbin
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
 
 <configuration>
-	<!-- 指定MR走shuffle -->
+	<!-- 指定 MR 走 shuffle -->
     <property>
         <name>yarn.nodemanager.aux-services</name>
         <value>mapreduce_shuffle</value>
     </property>
     
-    <!-- 指定ResourceManager的地址-->
+    <!-- 指定 ResourceManager 的地址-->
     <property>
         <name>yarn.resourcemanager.hostname</name>
         <value>hadoop103</value>
@@ -140,7 +140,7 @@ export PATH=$PATH:$HADOOP_HOME/sbin
         <value>JAVA_HOME,HADOOP_COMMON_HOME,HADOOP_HDFS_HOME,HADOOP_CONF_DIR,CLASSPATH_PREPEND_DISTCACHE,HADOOP_YARN_HOME,HADOOP_MAPRED_HOME</value>
     </property>
     
-    <!-- yarn容器允许分配的最大最小内存 -->
+    <!-- YARN 容器允许分配的最大最小内存 -->
     <property>
         <name>yarn.scheduler.minimum-allocation-mb</name>
         <value>512</value>
@@ -150,13 +150,13 @@ export PATH=$PATH:$HADOOP_HOME/sbin
         <value>4096</value>
     </property>
     
-    <!-- yarn容器允许管理的物理内存大小 -->
+    <!-- YARN 容器允许管理的物理内存大小 -->
     <property>
         <name>yarn.nodemanager.resource.memory-mb</name>
         <value>4096</value>
     </property>
     
-    <!-- 关闭yarn对物理内存和虚拟内存的限制检查 -->
+    <!-- 关闭 YARN 对物理内存和虚拟内存的限制检查 -->
     <property>
         <name>yarn.nodemanager.pmem-check-enabled</name>
         <value>false</value>
@@ -175,7 +175,7 @@ export PATH=$PATH:$HADOOP_HOME/sbin
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
 
 <configuration>
-	<!-- 指定MapReduce程序运行在Yarn上 -->
+	<!-- 指定 MapReduce 程序运行在 YARN 上 -->
     <property>
         <name>mapreduce.framework.name</name>
         <value>yarn</value>
@@ -212,7 +212,7 @@ hadoop104
 		<value>hadoop102:10020</value>
 	</property>
 
-	<!-- 历史服务器web端地址 -->
+	<!-- 历史服务器 Web 端地址 -->
 	<property>
 	<name>mapreduce.jobhistory.webapp.address</name>
 		<value>hadoop102:19888</value>
@@ -247,7 +247,7 @@ hadoop104
 		<name>yarn.log.server.url</name>  	<value>http://hadoop102:19888/jobhistory/logs</value>
 	</property>
 
-	<!-- 设置日志保留时间为7天 -->
+	<!-- 设置日志保留时间为 7 天 -->
 	<property>
 		<name>yarn.log-aggregation.retain-seconds</name>
 		<value>604800</value>
@@ -299,7 +299,7 @@ then
 fi
 case $1 in
 "start")
-        echo " =================== 启动 hadoop集群 ==================="
+        echo " =================== 启动 Hadoop集群 ==================="
 
         echo " --------------- 启动 hdfs ---------------"
         ssh hadoop102 "/opt/module/hadoop-3.1.3/sbin/start-dfs.sh"
@@ -309,7 +309,7 @@ case $1 in
         ssh hadoop102 "/opt/module/hadoop-3.1.3/bin/mapred --daemon start historyserver"
 ;;
 "stop")
-        echo " =================== 关闭 hadoop集群 ==================="
+        echo " =================== 关闭 Hadoop集群 ==================="
 
         echo " --------------- 关闭 historyserver ---------------"
         ssh hadoop102 "/opt/module/hadoop-3.1.3/bin/mapred --daemon stop historyserver"

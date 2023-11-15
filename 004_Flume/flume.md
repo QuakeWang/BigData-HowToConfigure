@@ -14,7 +14,7 @@
 
 ## 二、安装部署
 
-（1）将apache-flume-1.9.0-bin.tar.gz上传到服务器的 /opt/software 目录下
+（1）将 apache-flume-1.9.0-bin.tar.gz 上传到服务器的 /opt/software 目录下
 
 （2）解压 apache-flume-1.9.0-bin.tar.gz 到 /opt/module/ 目录下
 
