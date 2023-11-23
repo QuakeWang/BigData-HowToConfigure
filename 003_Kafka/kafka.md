@@ -94,4 +94,4 @@ esac
 
 增加脚本执行权限
 
-`chmod +x kf.sh`
+`sudo chmod +x kf.sh`

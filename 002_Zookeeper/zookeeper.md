@@ -81,9 +81,9 @@ server.4=hadoop104:2888:3888
 
 集群模式下配置一个文件 myid，这个文件在 dataDir 目录下，这个文件里面有一个数据就是 A 的值，Zookeeper 启动时读取此文件，拿到里面的数据与 zoo.cfg 里面的配置信息比较从而判断到底是哪个 server。
 
-**B **是这个服务器的地址；
+**B** 是这个服务器的地址；
 
-**C **是这个服务器 Follower 与集群中的 Leader 服务器交换信息的端口；
+**C** 是这个服务器 Follower 与集群中的 Leader 服务器交换信息的端口；
 
 **D** 是万一集群中的 Leader 服务器挂了，需要一个端口来重新进行选举，选出一个新的 Leader，而这个端口就是用来执行选举时服务器相互通信的端口。
 
@@ -163,7 +163,7 @@ esac
 
 增加脚本执行权限
 
-`chmod u+x zk.sh`
+`sudo chmod u+x zk.sh`
 
 Zookeeper 集群启动脚本
 

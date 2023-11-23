@@ -112,7 +112,7 @@ export PATH=$PATH:$HADOOP_HOME/sbin
         <name>dfs.replication</name>
         <value>3</value>
     </property>
-</configuration
+</configuration>
 ```
 
 ### 3、YARN 配置文件 yarn-site.xml
@@ -214,7 +214,7 @@ hadoop104
 
 	<!-- 历史服务器 Web 端地址 -->
 	<property>
-	<name>mapreduce.jobhistory.webapp.address</name>
+	    <name>mapreduce.jobhistory.webapp.address</name>
 		<value>hadoop102:19888</value>
 	</property>
 ```
@@ -244,7 +244,8 @@ hadoop104
 
 	<!-- 设置日志聚集服务器地址 -->
 	<property>  
-		<name>yarn.log.server.url</name>  	<value>http://hadoop102:19888/jobhistory/logs</value>
+		<name>yarn.log.server.url</name>  	
+        <value>http://hadoop102:19888/jobhistory/logs</value>
 	</property>
 
 	<!-- 设置日志保留时间为 7 天 -->
@@ -288,7 +289,7 @@ hadoop104
 
 在用户的 bin 目录下创建 Hadoop 集群启动脚本。
 
-`vim myhadoop.sh`
+`vim hdp.sh`
 
 ```shell
 #!/bin/bash
@@ -309,7 +310,7 @@ case $1 in
         ssh hadoop102 "/opt/module/hadoop-3.1.3/bin/mapred --daemon start historyserver"
 ;;
 "stop")
-        echo " =================== 关闭 Hadoop集群 ==================="
+        echo " =================== 关闭 Hadoop 集群 ==================="
 
         echo " --------------- 关闭 historyserver ---------------"
         ssh hadoop102 "/opt/module/hadoop-3.1.3/bin/mapred --daemon stop historyserver"
@@ -324,4 +325,4 @@ case $1 in
 esac
 ```
 
-`chmod 777 myhadoop.sh`
+`sudo chmod 777 hdp.sh`
